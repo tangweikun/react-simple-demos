@@ -6,6 +6,41 @@ import { Step3 } from "./components/Step3";
 import { Step4 } from "./components/Step4";
 import { Step5 } from "./components/Step5";
 import { Step6 } from "./components/Step6";
+import { Step7 } from "./components/Step7";
+
+const PRODUCTS = [
+  {
+    category: "Sporting Goods",
+    price: "$49.99",
+    stocked: true,
+    name: "Football"
+  },
+  {
+    category: "Sporting Goods",
+    price: "$9.99",
+    stocked: true,
+    name: "Baseball"
+  },
+  {
+    category: "Sporting Goods",
+    price: "$29.99",
+    stocked: false,
+    name: "Basketball"
+  },
+  {
+    category: "Electronics",
+    price: "$99.99",
+    stocked: true,
+    name: "iPod Touch"
+  },
+  {
+    category: "Electronics",
+    price: "$399.99",
+    stocked: false,
+    name: "iPhone 5"
+  },
+  { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" }
+];
 
 function App() {
   const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -45,6 +80,9 @@ function App() {
       {selectedIndex === 4 && <Step4 />}
       {selectedIndex === 5 && <Step5 />}
       {selectedIndex === 6 && <Step6 />}
+
+      {/* STEP7比较复杂，可以选择先跳过 */}
+      {selectedIndex === 7 && <Step7 products={PRODUCTS} />}
     </div>
   );
 }
