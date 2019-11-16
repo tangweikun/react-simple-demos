@@ -7,6 +7,7 @@ import { Step4 } from "./components/Step4";
 import { Step5 } from "./components/Step5";
 import { Step6 } from "./components/Step6";
 import { Step7 } from "./components/Step7";
+import { Step8 } from "./components/Step8";
 
 const PRODUCTS = [
   {
@@ -83,6 +84,8 @@ function App() {
 
       {/* STEP7比较复杂，可以选择先跳过 */}
       {selectedIndex === 7 && <Step7 products={PRODUCTS} />}
+
+      {selectedIndex === 8 && <Step8 />}
     </div>
   );
 }
