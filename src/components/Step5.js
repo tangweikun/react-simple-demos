@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function FancyBorder(props) {
   return (
@@ -18,31 +18,24 @@ function Dialog(props) {
   );
 }
 
-export class Step5 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSignUp = this.handleSignUp.bind(this);
-    this.state = { login: "" };
+export function Step5(props) {
+  const [login, setLogin] = useState("");
+
+  function handleChange(e) {
+    setLogin(e.target.value);
   }
 
-  render() {
-    return (
-      <Dialog
-        title="Mars Exploration Program"
-        message="How should we refer to you?"
-      >
-        <input value={this.state.login} onChange={this.handleChange} />
-        <button onClick={this.handleSignUp}>Sign Me Up!</button>
-      </Dialog>
-    );
+  function handleSignUp() {
+    alert(`Welcome aboard, ${login}!`);
   }
 
-  handleChange(e) {
-    this.setState({ login: e.target.value });
-  }
-
-  handleSignUp() {
-    alert(`Welcome aboard, ${this.state.login}!`);
-  }
+  return (
+    <Dialog
+      title="Mars Exploration Program"
+      message="How should we refer to you?"
+    >
+      <input value={login} onChange={handleChange} />
+      <button onClick={handleSignUp}>Sign Me Up!</button>
+    </Dialog>
+  );
 }

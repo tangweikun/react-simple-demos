@@ -8,6 +8,7 @@ import { Step5 } from "./components/Step5";
 import { Step6 } from "./components/Step6";
 import { Step7 } from "./components/Step7";
 import { Step8 } from "./components/Step8";
+import { Step9 } from "./components/Step9";
 
 const PRODUCTS = [
   {
@@ -86,6 +87,7 @@ function App() {
       {selectedIndex === 7 && <Step7 products={PRODUCTS} />}
 
       {selectedIndex === 8 && <Step8 />}
+      {selectedIndex === 9 && <Step9 />}
     </div>
   );
 }
