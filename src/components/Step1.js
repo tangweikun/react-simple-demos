@@ -1,3 +1,8 @@
+// 这个组件主要考核点
+// 1. props
+// 2. 对象解构
+// 3. 列表渲染
+
 import React from "react";
 
 export function Step1(props) {
@@ -13,7 +18,7 @@ export function Step1(props) {
       <div>{name}</div>
       <ul>
         {plans.map((item, index) => (
-          <li>{item}</li>
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </div>
