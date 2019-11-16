@@ -1,5 +1,3 @@
-// 这个组件主要知识点是组件的组合
-
 import React from "react";
 
 export function Step2() {
