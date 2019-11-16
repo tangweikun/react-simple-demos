@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Step1 } from "./components/Step1";
 
 function App() {
   const list = [1, 2, 3, 4, 5, 6];
   const [selectedIndex, setSelectedIndex] = useState(1);
 
   return (
-    <div className="App">
+    <div>
       {/* 根据list渲染出6个元素，点击元素可以改变selectedIndex的值 */}
       <div
         style={{
@@ -31,7 +32,9 @@ function App() {
       </div>
 
       {/* 根据当前的selectedIndex来显示不同组件 */}
-      {selectedIndex === 1 && <div>TODO:我是第1个组件</div>}
+      {selectedIndex === 1 && (
+        <Step1 title="我是第一组件" plans={["aaa", "bbb", "ccc"]} />
+      )}
       {selectedIndex === 2 && <div>TODO:我是第2个组件</div>}
       {selectedIndex === 3 && <div>TODO:我是第3个组件</div>}
       {selectedIndex === 4 && <div>TODO:我是第4个组件</div>}
