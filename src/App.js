@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Step1 } from "./components/Step1";
+import { Step2 } from "./components/Step2";
 
 function App() {
   const list = [1, 2, 3, 4, 5, 6];
@@ -35,7 +36,7 @@ function App() {
       {selectedIndex === 1 && (
         <Step1 title="我是第一组件" plans={["aaa", "bbb", "ccc"]} />
       )}
-      {selectedIndex === 2 && <div>TODO:我是第2个组件</div>}
+      {selectedIndex === 2 && <Step2 />}
       {selectedIndex === 3 && <div>TODO:我是第3个组件</div>}
       {selectedIndex === 4 && <div>TODO:我是第4个组件</div>}
       {selectedIndex === 5 && <div>TODO:我是第5个组件</div>}
