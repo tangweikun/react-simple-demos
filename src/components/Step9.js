@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export function Step9() {
-  // status是一个枚举类型，总共有三个取值 'DISABLED', 'STARTED', 'STOPPED'
+  // status是一个枚举类型，总共有三个取值 'DISABLED', 'STARTED', 'STOPPED', 'READY'
   const [status, setStatus] = useState("DISABLED");
 
   // 倒计时⏳的时长
@@ -11,6 +11,12 @@ export function Step9() {
   function onSecondsChanged(e) {
     setSeconds(e.target.value);
     setTime(e.target.value * 1000);
+
+    if (Number(e.target.value) > 0) {
+      setStatus("READY");
+    } else {
+      setStatus("DISABLED");
+    }
   }
 
   function handleStart() {
