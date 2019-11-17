@@ -25,8 +25,14 @@ export class Step11 extends React.Component {
 
   handleStart = () => {
     this.setState({ status: "STARTED" });
+
     this.interval = setInterval(() => {
-      this.setState(preState => ({ time: preState.time - 16 }));
+      if (this.state.time - 16 > 0) {
+        this.setState(preState => ({ time: preState.time - 16 }));
+      } else {
+        this.setState({ time: 0, status: "DISABLED", seconds: "" });
+        clearInterval(this.interval);
+      }
     }, 16);
   };
 
@@ -76,7 +82,7 @@ export class Step11 extends React.Component {
           />
         )}
 
-        {(status !== "STARTED" || status !== "DISABLED") && (
+        {(status === "READY" || status === "STOPPED") && (
           <div style={{ background: "red" }} onClick={this.handleStart}>
             开始
           </div>
