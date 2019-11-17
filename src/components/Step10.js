@@ -55,7 +55,7 @@ export function Step10() {
       <div>{`当前状态:${status}`}</div>
 
       {/* 设置type为number后就不能输入其他字符了 */}
-      {status !== "STARTED" && (
+      {(status === "DISABLED" || status === "READY") && (
         <input onChange={onSecondsChanged} type="number" value={seconds} />
       )}
 
