@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function Step9() {
+export function Step10() {
   // status是一个枚举类型，总共有三个取值 'DISABLED', 'STARTED', 'STOPPED', 'READY'
   const [status, setStatus] = useState("DISABLED");
 
@@ -52,14 +52,28 @@ export function Step9() {
       }}
     >
       <div style={{}}>{formatTime(time)}</div>
-
-      {/* 设置type为number后就不能输入其他字符了 */}
-      <input onChange={onSecondsChanged} type="number" value={seconds} />
       <div>{`当前状态:${status}`}</div>
 
-      <div onClick={handleStart}>开始</div>
-      <div onClick={handleStop}>暂停</div>
-      <div onClick={handleReset}>重置</div>
+      {/* 设置type为number后就不能输入其他字符了 */}
+      {status !== "STARTED" && (
+        <input onChange={onSecondsChanged} type="number" value={seconds} />
+      )}
+
+      {(status !== "STARTED" || status !== "DISABLED") && (
+        <div style={{ background: "red" }} onClick={handleStart}>
+          开始
+        </div>
+      )}
+
+      {status === "STARTED" && (
+        <div style={{ background: "purple" }} onClick={handleStop}>
+          暂停
+        </div>
+      )}
+
+      <div style={{ background: "green" }} onClick={handleReset}>
+        重置
+      </div>
     </div>
   );
 }
