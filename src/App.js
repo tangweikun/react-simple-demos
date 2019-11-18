@@ -15,6 +15,7 @@ import { TodoApp } from "./components/Step12/index";
 import { Step13 } from "./components/Step13/index";
 import { Step14 } from "./components/Step14/index";
 import { Step15 } from "./components/Step15/index";
+import { Step16 } from "./components/Step16/index";
 
 const PRODUCTS = [
   {
@@ -105,6 +106,7 @@ function App() {
       {selectedIndex === 13 && <Step13 />}
       {selectedIndex === 14 && <Step14 />}
       {selectedIndex === 15 && <Step15 />}
+      {selectedIndex === 16 && <Step16 />}
     </div>
   );
 }
