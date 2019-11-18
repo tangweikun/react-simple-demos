@@ -16,6 +16,7 @@ import { Step13 } from "./components/Step13/index";
 import { Step14 } from "./components/Step14/index";
 import { Step15 } from "./components/Step15/index";
 import { Step16 } from "./components/Step16/index";
+import { Step17 } from "./components/Step17/index";
 
 const PRODUCTS = [
   {
@@ -107,6 +108,7 @@ function App() {
       {selectedIndex === 14 && <Step14 />}
       {selectedIndex === 15 && <Step15 />}
       {selectedIndex === 16 && <Step16 />}
+      {selectedIndex === 17 && <Step17 />}
     </div>
   );
 }

@@ -63,7 +63,10 @@ export function Step16() {
       <ol>
         {list.map((item, index) => {
           return (
-            <li key={index} style={{ background: item.theme }}>
+            <li
+              key={index}
+              style={{ background: item.theme, opacity: item.isDone ? 0.4 : 1 }}
+            >
               <input type="checkbox" onChange={e => handleComplete(e, index)} />
               <span style={{ color: item.isDone ? "#fff" : "black" }}>
                 {item.value}
