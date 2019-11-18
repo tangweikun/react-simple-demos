@@ -12,6 +12,7 @@ import { Step9 } from "./components/Step9";
 import { Step10 } from "./components/Step10";
 import { Step11 } from "./components/Step11";
 import { TodoApp } from "./components/Step12/index";
+import { Step13 } from "./components/Step13/index";
 
 const PRODUCTS = [
   {
@@ -48,7 +49,11 @@ const PRODUCTS = [
 ];
 
 function App() {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  // const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const list = Array(20)
+    .fill(null)
+    .map((_, index) => index + 1);
+
   const [selectedIndex, setSelectedIndex] = useState(1);
 
   return (
@@ -58,7 +63,8 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "space-around",
-          marginBottom: "60px"
+          marginBottom: "60px",
+          flexWrap: "wrap"
         }}
       >
         {list.map(item => (
@@ -94,6 +100,7 @@ function App() {
       {selectedIndex === 10 && <Step10 />}
       {selectedIndex === 11 && <Step11 />}
       {selectedIndex === 12 && <TodoApp />}
+      {selectedIndex === 13 && <Step13 />}
     </div>
   );
 }
