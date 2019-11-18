@@ -24,3 +24,12 @@
 .wrapper {
   padding: 100px;
 }
+
+body {
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
+    Sans-Serif;
+  line-height: 1.5;
+  color: white;
+  background: #444;
+  padding: 20px;
+}
